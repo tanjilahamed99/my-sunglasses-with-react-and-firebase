@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { AiFillGoogleCircle } from "react-icons/ai";
 
 const Login = () => {
     return (
@@ -35,6 +36,9 @@ const Login = () => {
                         </div>
                         <p>new here <Link className="font-bold" to={'/registration'}>create account</Link></p>
                     </form>
+                    <div className="flex mx-auto justify-center pb-5">
+                        <AiFillGoogleCircle className="text-5xl font-normal flex justify-center"></AiFillGoogleCircle>
+                    </div>
                 </div>
             </div>
         </div>

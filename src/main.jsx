@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Root from './Root/Root.jsx'
 import Registration from './component/registration/Registration'
 import Login from './component/Login/Login'
+import AuthProvider from './AuthProvider/AuthProvider'
 
 const router = createBrowserRouter([
   {
@@ -12,12 +13,12 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path:'/registration',
-        element:<Registration></Registration>
+        path: '/registration',
+        element: <Registration></Registration>
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
     ]
   }
@@ -25,6 +26,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider> <RouterProvider router={router}></RouterProvider></AuthProvider>
   </React.StrictMode>,
 )

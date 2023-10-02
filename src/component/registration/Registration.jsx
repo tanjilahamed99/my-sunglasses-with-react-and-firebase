@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { AiFillGoogleCircle } from "react-icons/ai";
 
 const Registration = () => {
+    const { googleLogin } = useContext(AuthContext)
+
     return (
         <div className=" min-h-screen bg-base-200 mx-auto justify-center container pt-10">
             <div className="">
@@ -31,8 +36,11 @@ const Registration = () => {
                         <div className="form-control mt-6">
                             <button type="submit" className="btn btn-primary">Registration</button>
                         </div>
-                    <p>already have account <Link className="font-bold" to={'/login'}>login</Link></p>
+                        <p>already have account <Link className="font-bold" to={'/login'}>login</Link></p>
                     </form>
+                    <div className="flex mx-auto justify-center pb-5">
+                        <AiFillGoogleCircle onClick={googleLogin} className="text-5xl font-normal flex justify-center"></AiFillGoogleCircle>
+                    </div>
                 </div>
             </div>
         </div>
